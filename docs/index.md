@@ -14,15 +14,35 @@ _**Working:**_  This function takes two ```str``` type arguments.
   1. first argument is ```remove```: it takes characters to remove
   2. second argument is ```data``` : this takes data from which characters are to be removed <br>
 
-_**Example:**_  <br> <code>
-\>>> from kfuncs import removeData
-\>>> remove = "0x"
-\>>> data = "0x0123456789abcdef"
-\>>> removeData(remove, data)
-'0123456789abcdef'
-</code> <br>
+_**Example:**_  <br>
+```
+>>> from kfuncs import removeData
+>>> remove = "0x"
+>>> data = "0x0123456789abcdef"
+>>> removeData(remove, data)
+>>>'0123456789abcdef' 
+``` 
+<br>
 
 _**Errors:**_ The following errors are possible: <br>
   1. ```RemoveNotError``` : It implies that the character you want to remove are not present in provided data.
 
-_**Usecases:**_  To remove ```0x``` from hex string.
+_**Usecase:**_  To remove ```0x``` from hex string.
+
+## checkHx()
+_**Working:**_  This function takes one ```str``` hex-type arguments. 
+
+_**Example:**_  <br>
+```
+>>> from kfuncs import checkHx
+>>> data = "33f"
+>>>  checkHx("33f")
+>>> '033f'
+>>> checkHx("323f")
+>>> '323f
+```
+<br>
+
+_**Errors:**_ Currently no errors: <br>
+
+_**Usecases:**_  To convert hex string to even size so that ```bytes.fromhex()``` gives no errors..
