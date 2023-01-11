@@ -30,19 +30,25 @@ _**Errors:**_ The following errors are possible: <br>
 _**Usecase:**_  To remove ```0x``` from hex string.
 
 ## checkHx()
-_**Working:**_  This function takes one ```str``` hex-type arguments. 
+_**Working:**_  This function takes one ```str``` hex-type arguments and one optional ```int``` type argument. 
+  1. first argument is ```hexdat``` : it takes hex you want to evenize.
+  2. second argument is ```h``` : It is optional argument if given it will add leading zeros to ```hexdat``` until it's length = ```h```
 
 _**Example:**_  <br>
 ```
 >>> from kfuncs import checkHx
 >>> data = "33f"
 >>>  checkHx("33f")
->>> '033f'
+>>> '033f' #Evenize the odd hex.
 >>> checkHx("323f")
->>> '323f
+>>> '323f' #Didn't evenize even hex.
+>>> checkHx("31f", 10)
+>>> '000000031f' #Added 7 leading zeros to given hex so length of he is 10.
 ```
 <br>
 
-_**Errors:**_ Currently no errors: <br>
+_**Errors:**_ The following errors are possible: : <br>
+  1. ```HexLengthError``` : It implies that optional argument ```h``` is odd. It must be even.
+  2. ```HexLengthExcept``` : It implies that ```hexdat``` is already greater than ```h``` argument.
 
 _**Usecases:**_  To convert hex string to even size so that ```bytes.fromhex()``` gives no errors..
