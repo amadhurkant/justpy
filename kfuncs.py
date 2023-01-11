@@ -9,9 +9,19 @@ def removeData(remove, data):
         data2 = data2+i
     return data2
 
-def checkHx(hexdat):
-    if len(hexdat) % 2 == 0:
-        return hexdat
+def checkHx(hexdat, h=0):
+    if h % 2 != 0:
+        raise Exception("HexLengthError: The second argument must be a even number")
+    int_test = int(hexdat, 16)
+    if h > 0:
+        if len(hexdat) > h:
+            raise Exception("HexLengthExcept: Hex length is greater than input hex")
+        else:
+            res = hexdat.rjust(h, '0')
+            return res
     else:
-        hexdat = "0"+hexdat
-    return hexdat
+        if len(hexdat) % 2 == 0:
+            return hexdat
+        else:
+            hexdat = "0"+hexdat
+            return hexdat
