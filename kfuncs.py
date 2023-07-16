@@ -26,7 +26,7 @@ def checkHx(hexdat, h=0):
             hexdat = "0"+hexdat
             return hexdat
 
-def eugclidianGCDTable(a, b):
+def euclidianGCDTable(a, b):
     if b > a:
         x = b
         p = a
