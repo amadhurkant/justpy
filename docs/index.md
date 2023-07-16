@@ -51,4 +51,21 @@ _**Errors:**_ The following errors are possible: : <br>
   1. ```HexLengthError``` : It implies that optional argument ```h``` is odd. It must be even.
   2. ```HexLengthExcept``` : It implies that ```hexdat``` is already greater than ```h``` argument.
 
-_**Usecases:**_  To convert hex string to even size so that ```bytes.fromhex()``` gives no errors..
+_**Usecases:**_  To convert hex string to even size so that ```bytes.fromhex()``` gives no errors.
+
+## euclidianGCDTable():
+_**Working:**_  This function takes two ```int``` type arguments and return a dictionary consisting the steps to derive hcf.
+
+_**Example:**_  <br>
+
+```
+>>> from kfuncs import euclidianGCDTable
+>>> euclidianGCDTable(87, 8)
+>>> {0: [87, 8, 10, 7], 1: [8, 7, 1, 1], 2: [7, 1, 7, 0]}
+```
+
+<br>
+
+Thus in example above let's say in item0 of dictionary we have ```87, 8, 10, 7``` it is equivalent to ```87 = 8*10 + 7```. The process continues till remainder 0 is achieved. <br>
+
+_**Usecases:**_  Well I have made it for specific purpose it may or may not be of use of user.
